@@ -5,7 +5,7 @@
 
 Welcome to the **new** student repository for PPHA 30538: Data and Programming in Python. 
 
-## Repository Structure
+# Repository Structure
 
 Lectures are in both the `before_lecture` and `after_lecture` folders. `before_lecture` does not contain answers to in-class exercises, while `after_lecture` does. Within each folder ,each lecture will have its own folder with the following materials:
 - **Quarto code**: `.qmd` files that are the source of the lecture slides.
@@ -14,95 +14,90 @@ Lectures are in both the `before_lecture` and `after_lecture` folders. `before_l
 
 Each problem set and mini-lesson will have their own folders within their respective folders. Kickoff slides (slides discussed before lecture starts) are all contained in `kickoff`.
 
+---
+# Accessing the Repository
+## Step 1: Fork the Repository  
+- Go to the [original repository](https://github.com/uchicago-harris-dap/student30538) on GitHub.  
+- Click the **Fork** button in the upper-right corner of the repository page. This will create a personal copy of the repository in your GitHub account.
 
-## Getting Started
+---
 
-### GitHub Desktop
+## Using GitHub Desktop
 
-1. **Ensure you are logged in to GitHub**:
-   - Open GitHub Desktop.
-   - Navigate to `File > Options` (on Windows) or `GitHub Desktop > Preferences` (on Mac).
-   - Check the `Accounts` tab to make sure you're logged into your GitHub account.
+### Step 2: Clone Your Forked Repository  
+1. Open **GitHub Desktop**.  
+2. Click **File > Clone Repository**.  
+3. Select the **"URL" tab** and paste in **https://github.com/uchicago-harris-dap/student30538**.
+4. Choose a local directory where you want to clone the repository.  
+5. Click **Clone**.
 
-2. **Clone the repository**:
-   - Open GitHub Desktop.
-   - Click on `File > Clone Repository`.
-   - Enter the repository URL: https://github.com/uchicago-harris-dap/student30538.
-   - Choose the location on your computer to save the repository and click `Clone`.
-   
+### Step 3: Sync Your Fork with the Original Repository  
+1. Open the cloned repository in GitHub Desktop.  
+2. Click **Repository > Repository Settings**.  
+3. Under **Remotes**, click **Add Remote**.  
+4. Set the name as `upstream` and paste the **https://github.com/uchicago-harris-dap/student30538** of the original repository:
+   ```
+   https://github.com/uchicago-harris-dap/student30538
+   ```
+5. Click **Save**.  
+6. To fetch updates from the original repository, click **Fetch Origin** in the main GitHub Desktop window.  
+7. When updates are available, click **Pull** to merge them into your local copy.
 
-### Git Command Line
+### Step 4: Push Changes to Your Fork  
+1. After making changes, click **Commit to main** in GitHub Desktop.  
+2. Add a commit message and click **Commit**.  
+3. Click **Push Origin** to send the changes to your forked repository on GitHub.
 
-1. **Ensure you are logged in to GitHub**:
-   - In your browser, navigate to [GitHub](https://github.com) and log in to your account.
+---
 
-2. **Clone the repository**:
-   - Open your terminal.
-   - Run the following command to clone the repository:
-     ```bash
-     git clone https://github.com/uchicago-harris-dap/student30538
-     ```
-   - Navigate into the cloned repository folder:
-     ```bash
-     cd student30538
-     ```
+## Using Command Line
 
-## Updating the Repository
-### GitHub Desktop
-1. **Commit Changes**  
-   - In the **"Changes"** tab, select files to commit by checking their boxes.  
-   - Add a **Summary** message and click **"Commit to [branch-name]"**.  
+### Step 2: Clone Your Forked Repository  
+1. In your GitHub account, navigate to your **forked repository**.  
+2. Click the green **Code** button and copy the **HTTPS URL**, **https://github.com/uchicago-harris-dap/student30538**.  
+3. Open a terminal and run the following command:
+   ```bash
+   git clone **https://github.com/uchicago-harris-dap/student30538**
+   ```
 
-2. **Pull Latest Changes**  
-   - Click **"Fetch origin"** to check for updates.  
-   - If updates are available, click **"Pull origin"**.  
+### Step 3: Set the Upstream Remote  
+(Optional but recommended to keep your fork updated.)  
+1. Navigate to the cloned repository in your terminal:
+   ```bash
+   cd student30538
+   ```
+2. Add the upstream remote:
+   ```bash
+   git remote add upstream https://github.com/uchicago-harris-dap/student30538
+   ```
+3. Confirm your remotes:
+   ```bash
+   git remote -v
+   ```
 
-3. **Resolve Merge Conflicts (If Needed)**  
-   - Conflicting files appear with a red exclamation mark in **"Changes"**.  
-   - Click the file to review both **"Current"** (yours) and **"Incoming"** (theirs) changes.  
-   - Keep or edit changes, then click **"Mark as Resolved"**.  
-   - Click **"Commit Merge"** to finalize.  
+### Step 4: Sync Your Fork with the Original Repository  
+1. Fetch updates from the original repository:
+   ```bash
+   git fetch upstream
+   ```
+2. Merge the updates into your local branch:
+   ```bash
+   git merge upstream/main
+   ```
+   Replace `main` if the default branch has a different name (e.g., `master`).
 
- 
-### Git Command Line
-1. **Commit any changes**
-    - Check what changes you made since the last pull to show `name-of-file-you-changed`
-     ```bash
-     git status
-     ```
-    - Add any changes you made you want to keep 
-     ```bash
-     git add name-of-file-you-changed
-     ```
-     - Commit those changes with a message
-     ```bash
-     git commit -m "this commit message explains more about what changes I'm committing"
-     ```
- 2. **Pull Latest Changes**  
-   - Pull the latest changes from the remote branch:  
-     ```bash
-     git pull
-     ```
-     
- 3. **Resolve Merge Conflicts (If Needed)**  
-   - If there are conflicts, Git will list the conflicting files after the pull.  
-     ```bash
-     git status
-     ```
-   - Open the conflicting files in a text editor to resolve conflicts:  
-     - Look for markers like `<<<<<<<`, `=======`, and `>>>>>>>` to review **your changes** (current) and **their changes** (incoming).  
-     - Edit the file to keep or merge changes as needed.
+### Step 5: Push Changes to Your Fork  
+1. After making changes, stage and commit them:
+   ```bash
+   git add .
+   git commit -m "Your commit message"
+   ```
+2. Push the changes to your fork:
+   ```bash
+   git push origin main
+   ```
 
-   - Once resolved, add the modified file:  
-     ```bash
-     git add <file-name>
-     ```
-
-   - Commit the merge:  
-     ```bash
-     git commit -m "Resolved merge conflict in <file-name>"
-     ```
-    
+---
 
 
 Feel free to reach out via EdDiscussion if you have any questions or run into any issues. Happy coding!

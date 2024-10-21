@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,11 +19,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -48,47 +49,17 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
-<script src="scales_axes_legends_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="scales_axes_legends_files/libs/clipboard/clipboard.min.js"></script>
 <script src="scales_axes_legends_files/libs/quarto-html/quarto.js"></script>
 <script src="scales_axes_legends_files/libs/quarto-html/popper.min.js"></script>
 <script src="scales_axes_legends_files/libs/quarto-html/tippy.umd.min.js"></script>
@@ -99,7 +70,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="scales_axes_legends_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="scales_axes_legends_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
@@ -117,7 +88,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#roadmap" id="toc-roadmap" class="nav-link" data-scroll-target="#roadmap">roadmap</a></li>
   <li><a href="#scales-and-guides" id="toc-scales-and-guides" class="nav-link" data-scroll-target="#scales-and-guides">scales and guides</a></li>
-  <li><a href="#dataset-for-this-lecture" id="toc-dataset-for-this-lecture" class="nav-link" data-scroll-target="#dataset-for-this-lecture">Dataset for this lecture</a></li>
+  <li><a href="#dataset-for-this-lecture-antibiotics" id="toc-dataset-for-this-lecture-antibiotics" class="nav-link" data-scroll-target="#dataset-for-this-lecture-antibiotics">Dataset for this lecture: <code>antibiotics</code></a></li>
+  <li><a href="#our-research-questions" id="toc-our-research-questions" class="nav-link" data-scroll-target="#our-research-questions">Our research questions</a></li>
   </ul></li>
   <li><a href="#configuring-scales-and-axes" id="toc-configuring-scales-and-axes" class="nav-link" data-scroll-target="#configuring-scales-and-axes">Configuring Scales and Axes</a>
   <ul class="collapse">
@@ -183,7 +155,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
   
 
+
 </header>
+
 
 <!--
     beamer:
@@ -218,90 +192,102 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ol>
 </section>
-<section id="dataset-for-this-lecture" class="level2">
-<h2 class="anchored" data-anchor-id="dataset-for-this-lecture">Dataset for this lecture</h2>
+<section id="dataset-for-this-lecture-antibiotics" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-for-this-lecture-antibiotics">Dataset for this lecture: <code>antibiotics</code></h2>
 <ul>
 <li>Each row: a type of bacteria</li>
 <li>Each column: a type of antibiotic</li>
-<li>Each value: <em>minimum inhibitory concentration (MIC)</em> the concentration of antibiotic (in micrograms per milliliter) required to prevent growth in vitro. Lower values means antibiotic is more effective</li>
+<li>Each value: <em>minimum inhibitory concentration (MIC)</em> the concentration of antibiotic (in micrograms per milliliter) required to prevent growth in vitro. Lower values means antibiotic is <em>more effective</em></li>
 <li>There are two other columns with the genus of the bacteria and the response to a lab procedure called “gram staining”. We will come back to these later.</li>
-<li>Discussion questions: 1) are these data “tidy”? 2) if no, how would you tidy them?</li>
+<li>“In the fall of 1951, Will Burtin published this graph showing the effectiveness of three popular antibiotics on 16 different bacteria, measured in terms of minimum inhibitory concentration.” <a href="http://borgar.net/s/2016/03/will-burtins-antibiotics/">source</a></li>
 </ul>
-<!-- PG to GGG 
-* add a reshape command here 
-* what year is this dataset come from? who generated it and how was it generated?
--->
-<p>Research questions</p>
+<p><img src="pictures/burtin.png" class="img-fluid"></p>
+<p>Discussion questions</p>
+<ul>
+<li>headline? (aka the main message)</li>
+<li>sub-messages? (other information one can learn beyond the main message)</li>
+</ul>
+</section>
+<section id="our-research-questions" class="level2">
+<h2 class="anchored" data-anchor-id="our-research-questions">Our research questions</h2>
+<p>We will dive deeper into his data with the following research questions:</p>
 <ol type="1">
-<li>How does effective is neomycin against different types of bacteria?</li>
+<li>How effective is neomycin against different types of bacteria?</li>
 <li>How does neomycin compare to other antibiotics, such as streptomycin and penicillin?</li>
 <li>For which types of bacteria are neomycin and penicillin effective?</li>
 </ol>
-<div class="cell" data-execution_count="1">
+<div id="9ec029a0" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> altair <span class="im">as</span> alt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="2">
+<div id="580e57fe" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>antibiotics <span class="op">=</span> <span class="st">'https://cdn.jsdelivr.net/npm/vega-datasets@1/data/burtin.json'</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pd.read_json(antibiotics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="4">
+<div id="34fd7de1" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>antibiotics[[<span class="st">'Bacteria'</span>, <span class="st">'Penicillin'</span>, <span class="st">'Streptomycin'</span>, <span class="st">'Neomycin'</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Bacteria</th>
-      <th>Penicillin</th>
-      <th>Streptomycin</th>
-      <th>Neomycin</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Aerobacter aerogenes</td>
-      <td>870.000</td>
-      <td>1.00</td>
-      <td>1.600</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Bacillus anthracis</td>
-      <td>0.001</td>
-      <td>0.01</td>
-      <td>0.007</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Brucella abortus</td>
-      <td>1.000</td>
-      <td>2.00</td>
-      <td>0.020</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Diplococcus pneumoniae</td>
-      <td>0.005</td>
-      <td>11.00</td>
-      <td>10.000</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Escherichia coli</td>
-      <td>100.000</td>
-      <td>0.40</td>
-      <td>0.100</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Bacteria</th>
+<th data-quarto-table-cell-role="th">Penicillin</th>
+<th data-quarto-table-cell-role="th">Streptomycin</th>
+<th data-quarto-table-cell-role="th">Neomycin</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Aerobacter aerogenes</td>
+<td>870.000</td>
+<td>1.00</td>
+<td>1.600</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Bacillus anthracis</td>
+<td>0.001</td>
+<td>0.01</td>
+<td>0.007</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Brucella abortus</td>
+<td>1.000</td>
+<td>2.00</td>
+<td>0.020</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Diplococcus pneumoniae</td>
+<td>0.005</td>
+<td>11.00</td>
+<td>10.000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Escherichia coli</td>
+<td>100.000</td>
+<td>0.40</td>
+<td>0.100</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
+<p>Discussion questions:</p>
+<ul>
+<li>are these data “tidy”?</li>
+<li>if no, how would you tidy them?</li>
+</ul>
+<p><strong>NOTES:</strong> <em>solution: reshape from wide to long</em></p>
 </section>
 </section>
 <section id="configuring-scales-and-axes" class="level1">
@@ -318,30 +304,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="plotting-antibiotic-resistance-adjusting-the-scale-type" class="level2">
 <h2 class="anchored" data-anchor-id="plotting-antibiotic-resistance-adjusting-the-scale-type">Plotting Antibiotic Resistance: Adjusting the Scale Type</h2>
 <p>Default scale is linear</p>
-<div class="cell" data-execution_count="5">
+<div id="fba752f0" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 
 <style>
-  #altair-viz-421477cae5ad4f2588f28c14e922bf38.vega-embed {
+  #altair-viz-c5b3222f386f450f9bf669a65f68c4c2.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-421477cae5ad4f2588f28c14e922bf38.vega-embed details,
-  #altair-viz-421477cae5ad4f2588f28c14e922bf38.vega-embed details summary {
+  #altair-viz-c5b3222f386f450f9bf669a65f68c4c2.vega-embed details,
+  #altair-viz-c5b3222f386f450f9bf669a65f68c4c2.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-421477cae5ad4f2588f28c14e922bf38"></div>
+<div id="altair-viz-c5b3222f386f450f9bf669a65f68c4c2"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-421477cae5ad4f2588f28c14e922bf38") {
-      outputDiv = document.getElementById("altair-viz-421477cae5ad4f2588f28c14e922bf38");
+    if (outputDiv.id !== "altair-viz-c5b3222f386f450f9bf669a65f68c4c2") {
+      outputDiv = document.getElementById("altair-viz-c5b3222f386f450f9bf669a65f68c4c2");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -391,14 +377,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </script>
 </div>
 </div>
-<p>Why is this plot hard to read?</p>
-<div class="notes">
+<p>Discussion question: why is this plot hard to read?</p>
 <p><strong>NOTES:</strong> <em>solution: all the points are clustered at the bottom</em></p>
-</div>
 </section>
 <section id="alt-scale-i" class="level2">
 <h2 class="anchored" data-anchor-id="alt-scale-i">alt scale I</h2>
-<div class="cell" data-execution_count="6">
+<div id="2e54221d" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'sqrt'</span>))</span>
@@ -406,23 +390,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="29">
 
 <style>
-  #altair-viz-083968d61c224948aacc4941a0cb88e2.vega-embed {
+  #altair-viz-39b5bc02dca4479e9f689a64e7ea21a0.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-083968d61c224948aacc4941a0cb88e2.vega-embed details,
-  #altair-viz-083968d61c224948aacc4941a0cb88e2.vega-embed details summary {
+  #altair-viz-39b5bc02dca4479e9f689a64e7ea21a0.vega-embed details,
+  #altair-viz-39b5bc02dca4479e9f689a64e7ea21a0.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-083968d61c224948aacc4941a0cb88e2"></div>
+<div id="altair-viz-39b5bc02dca4479e9f689a64e7ea21a0"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-083968d61c224948aacc4941a0cb88e2") {
-      outputDiv = document.getElementById("altair-viz-083968d61c224948aacc4941a0cb88e2");
+    if (outputDiv.id !== "altair-viz-39b5bc02dca4479e9f689a64e7ea21a0") {
+      outputDiv = document.getElementById("altair-viz-39b5bc02dca4479e9f689a64e7ea21a0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -475,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="alt-scale-ii" class="level2">
 <h2 class="anchored" data-anchor-id="alt-scale-ii">alt scale II</h2>
-<div class="cell" data-execution_count="7">
+<div id="c82c0685" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>          scale<span class="op">=</span>alt.Scale(<span class="bu">type</span><span class="op">=</span><span class="st">'log'</span>))</span>
@@ -483,23 +467,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="30">
 
 <style>
-  #altair-viz-3c9469f2c4c343e7a60a39e27bda5b82.vega-embed {
+  #altair-viz-ae79ee2355b24e56b9043b8bcc185417.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-3c9469f2c4c343e7a60a39e27bda5b82.vega-embed details,
-  #altair-viz-3c9469f2c4c343e7a60a39e27bda5b82.vega-embed details summary {
+  #altair-viz-ae79ee2355b24e56b9043b8bcc185417.vega-embed details,
+  #altair-viz-ae79ee2355b24e56b9043b8bcc185417.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-3c9469f2c4c343e7a60a39e27bda5b82"></div>
+<div id="altair-viz-ae79ee2355b24e56b9043b8bcc185417"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3c9469f2c4c343e7a60a39e27bda5b82") {
-      outputDiv = document.getElementById("altair-viz-3c9469f2c4c343e7a60a39e27bda5b82");
+    if (outputDiv.id !== "altair-viz-ae79ee2355b24e56b9043b8bcc185417") {
+      outputDiv = document.getElementById("altair-viz-ae79ee2355b24e56b9043b8bcc185417");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -549,11 +533,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </script>
 </div>
 </div>
-<p>What does this plot do well? What is confusing about it?</p>
-<div class="notes">
+<p>Discussion question: what does this plot do well? What is confusing about it?</p>
 <p><strong>NOTES:</strong> *solution: does well: gives a broad sense of scale</p>
 <p>does poorly: The hashes between units of base 10 are not equally spaced and therefore pretty hard to read. It seems like they are trying to capture equally divided units (e.g.&nbsp;1, 2, 3, 4, 5…). But even this is not correct! I think there are only 7 dashes between each value, like 1 and 10. So that suggests that there is something more complicated going on. My best guess is that it choose to suppress dashes 8 and 9, but this is pretty confusing for a reader…*</p>
-</div>
 </section>
 <section id="styling-an-axis" class="level2">
 <h2 class="anchored" data-anchor-id="styling-an-axis">Styling an Axis</h2>
@@ -561,7 +543,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Lower dosages indicate higher effectiveness. However, many readers will expect values that are “better” to be “up and to the right” within a chart.</li>
 <li>If we want to cater to this convention set the encoding <code>sort</code> property to <code>'descending'</code>:</li>
 </ul>
-<div class="cell" data-execution_count="8">
+<div id="1c2164fd" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -570,23 +552,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="31">
 
 <style>
-  #altair-viz-6850afbb50b640bc8e20a31eaf85e1d5.vega-embed {
+  #altair-viz-81f795e0269e4caf9c961cc57a2a6813.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-6850afbb50b640bc8e20a31eaf85e1d5.vega-embed details,
-  #altair-viz-6850afbb50b640bc8e20a31eaf85e1d5.vega-embed details summary {
+  #altair-viz-81f795e0269e4caf9c961cc57a2a6813.vega-embed details,
+  #altair-viz-81f795e0269e4caf9c961cc57a2a6813.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-6850afbb50b640bc8e20a31eaf85e1d5"></div>
+<div id="altair-viz-81f795e0269e4caf9c961cc57a2a6813"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-6850afbb50b640bc8e20a31eaf85e1d5") {
-      outputDiv = document.getElementById("altair-viz-6850afbb50b640bc8e20a31eaf85e1d5");
+    if (outputDiv.id !== "altair-viz-81f795e0269e4caf9c961cc57a2a6813") {
+      outputDiv = document.getElementById("altair-viz-81f795e0269e4caf9c961cc57a2a6813");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -639,7 +621,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="add-a-clarifying-title" class="level2">
 <h2 class="anchored" data-anchor-id="add-a-clarifying-title">add a clarifying title</h2>
-<div class="cell" data-execution_count="9">
+<div id="28fa042b" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -649,23 +631,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="32">
 
 <style>
-  #altair-viz-f4890df2a1514734b1d43938b4a9ea86.vega-embed {
+  #altair-viz-2cbb161e71854d2f92a6761b774a441e.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-f4890df2a1514734b1d43938b4a9ea86.vega-embed details,
-  #altair-viz-f4890df2a1514734b1d43938b4a9ea86.vega-embed details summary {
+  #altair-viz-2cbb161e71854d2f92a6761b774a441e.vega-embed details,
+  #altair-viz-2cbb161e71854d2f92a6761b774a441e.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-f4890df2a1514734b1d43938b4a9ea86"></div>
+<div id="altair-viz-2cbb161e71854d2f92a6761b774a441e"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f4890df2a1514734b1d43938b4a9ea86") {
-      outputDiv = document.getElementById("altair-viz-f4890df2a1514734b1d43938b4a9ea86");
+    if (outputDiv.id !== "altair-viz-2cbb161e71854d2f92a6761b774a441e") {
+      outputDiv = document.getElementById("altair-viz-2cbb161e71854d2f92a6761b774a441e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -720,15 +702,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The fact that it is a log scale is self-evident. So is the fact that it is reversed.</li>
 <li>What the reader really wants to know is which direction is “good”. Just tell them that directly.</li>
 </ol>
+<p><strong>NOTES:</strong> MS to GGG: it’s actually not self-evident to me at first glance that it’s log scale because it’s reversed. If I saw that, I would actually it’s some kind of bug in the code. It’d be better if the scale was just “100, 10, 1, 0.1, 0.001”</p>
 </section>
 <section id="comparing-antibiotics-adjusting-grid-lines-tick-counts-and-sizing" class="level2">
 <h2 class="anchored" data-anchor-id="comparing-antibiotics-adjusting-grid-lines-tick-counts-and-sizing">Comparing Antibiotics: Adjusting Grid Lines, Tick Counts, and Sizing</h2>
 <p><em>How does neomycin compare to streptomycin?</em></p>
 <p>Question for the class: what does each point repesent?</p>
-<div class="notes">
 <p><strong>NOTES:</strong> <em>solution: Each point is 1 bacteria strain, and we’re plotting two of the bacteria’s properties against each other.</em></p>
-</div>
-<div class="cell" data-execution_count="10">
+<div id="ecb8baf7" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -742,23 +723,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="33">
 
 <style>
-  #altair-viz-587e90c268094b799de3217125dff449.vega-embed {
+  #altair-viz-b0878d7891f64b358db713d02d58f617.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-587e90c268094b799de3217125dff449.vega-embed details,
-  #altair-viz-587e90c268094b799de3217125dff449.vega-embed details summary {
+  #altair-viz-b0878d7891f64b358db713d02d58f617.vega-embed details,
+  #altair-viz-b0878d7891f64b358db713d02d58f617.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-587e90c268094b799de3217125dff449"></div>
+<div id="altair-viz-b0878d7891f64b358db713d02d58f617"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-587e90c268094b799de3217125dff449") {
-      outputDiv = document.getElementById("altair-viz-587e90c268094b799de3217125dff449");
+    if (outputDiv.id !== "altair-viz-b0878d7891f64b358db713d02d58f617") {
+      outputDiv = document.getElementById("altair-viz-b0878d7891f64b358db713d02d58f617");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -808,9 +789,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </script>
 </div>
 </div>
-<p>Bacteria responds similarly to these two antibiotics</p>
+<p>This plot shows that bacteria responds similarly to these two antibiotics – it approximately follows the 45-degree line.</p>
 <p><em>How does neomycin compare to penicillin?</em></p>
-<div class="cell" data-execution_count="11">
+<div id="2f8c84c7" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -824,23 +805,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="34">
 
 <style>
-  #altair-viz-d7072011ca8e4d56a68bbe21694fdd21.vega-embed {
+  #altair-viz-88e35b32c03d40749b4a3697afa1cf65.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-d7072011ca8e4d56a68bbe21694fdd21.vega-embed details,
-  #altair-viz-d7072011ca8e4d56a68bbe21694fdd21.vega-embed details summary {
+  #altair-viz-88e35b32c03d40749b4a3697afa1cf65.vega-embed details,
+  #altair-viz-88e35b32c03d40749b4a3697afa1cf65.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-d7072011ca8e4d56a68bbe21694fdd21"></div>
+<div id="altair-viz-88e35b32c03d40749b4a3697afa1cf65"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d7072011ca8e4d56a68bbe21694fdd21") {
-      outputDiv = document.getElementById("altair-viz-d7072011ca8e4d56a68bbe21694fdd21");
+    if (outputDiv.id !== "altair-viz-88e35b32c03d40749b4a3697afa1cf65") {
+      outputDiv = document.getElementById("altair-viz-88e35b32c03d40749b4a3697afa1cf65");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -895,7 +876,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="fix-domain-equalize-aspect-ratio" class="level2">
 <h2 class="anchored" data-anchor-id="fix-domain-equalize-aspect-ratio">fix <code>domain</code>, equalize aspect ratio</h2>
 <p>While this plot is useful, we can make it better. The x and y axes use the same units, but have different extents (the chart width is larger than the height) and different domains (0.001 to 100 for the x-axis, and 0.001 to 1,000 for the y-axis).</p>
-<div class="cell" data-execution_count="12">
+<div id="8c8e654c" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle().encode(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -909,23 +890,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="35">
 
 <style>
-  #altair-viz-3f33c9dd6ccf4fa29795c5773140f74b.vega-embed {
+  #altair-viz-e31c2e78a3504134893ac184773416cb.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-3f33c9dd6ccf4fa29795c5773140f74b.vega-embed details,
-  #altair-viz-3f33c9dd6ccf4fa29795c5773140f74b.vega-embed details summary {
+  #altair-viz-e31c2e78a3504134893ac184773416cb.vega-embed details,
+  #altair-viz-e31c2e78a3504134893ac184773416cb.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-3f33c9dd6ccf4fa29795c5773140f74b"></div>
+<div id="altair-viz-e31c2e78a3504134893ac184773416cb"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3f33c9dd6ccf4fa29795c5773140f74b") {
-      outputDiv = document.getElementById("altair-viz-3f33c9dd6ccf4fa29795c5773140f74b");
+    if (outputDiv.id !== "altair-viz-e31c2e78a3504134893ac184773416cb") {
+      outputDiv = document.getElementById("altair-viz-e31c2e78a3504134893ac184773416cb");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -979,7 +960,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="reduce-grid-clutter-with-alt.axistickcount5" class="level2">
 <h2 class="anchored" data-anchor-id="reduce-grid-clutter-with-alt.axistickcount5">reduce grid clutter with <code>alt.Axis(tickCount=5)</code></h2>
 <p>Also set <code>mark_circle(size=80)</code></p>
-<div class="cell" data-execution_count="13">
+<div id="065ee398" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -995,23 +976,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="36">
 
 <style>
-  #altair-viz-ebe96a4fb9cd46399d89d06cd0b17212.vega-embed {
+  #altair-viz-50817e805a784db79abb2fca622970fb.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-ebe96a4fb9cd46399d89d06cd0b17212.vega-embed details,
-  #altair-viz-ebe96a4fb9cd46399d89d06cd0b17212.vega-embed details summary {
+  #altair-viz-50817e805a784db79abb2fca622970fb.vega-embed details,
+  #altair-viz-50817e805a784db79abb2fca622970fb.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-ebe96a4fb9cd46399d89d06cd0b17212"></div>
+<div id="altair-viz-50817e805a784db79abb2fca622970fb"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-ebe96a4fb9cd46399d89d06cd0b17212") {
-      outputDiv = document.getElementById("altair-viz-ebe96a4fb9cd46399d89d06cd0b17212");
+    if (outputDiv.id !== "altair-viz-50817e805a784db79abb2fca622970fb") {
+      outputDiv = document.getElementById("altair-viz-50817e805a784db79abb2fca622970fb");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1062,9 +1043,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>Discussion questions: 1) What questions does this plot answer? 2) What further questions does this plot raise?</p>
-<div class="notes">
 <p><strong>NOTES:</strong> <em>solution Answers: 1) some bacteria respond well to neomycin but not penicillin, and vice versa! 2) for what types of bacteria is N effective or P effective? Need some way to dig deeper. This is what we will do in the remainder of the lecture</em></p>
-</div>
 </section>
 <section id="configuring-scales-and-axes-summary" class="level2">
 <h2 class="anchored" data-anchor-id="configuring-scales-and-axes-summary">Configuring Scales and Axes: summary</h2>
@@ -1112,45 +1091,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="pictures/Gram_stain_01.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Gram staining example</figcaption><p></p>
+<figcaption>Gram staining example</figcaption>
 </figure>
 </div>
-<div class="cell" data-execution_count="14">
+<div id="6bc09da4" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>antibiotics[[<span class="st">'Gram_Staining'</span>]].tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Gram_Staining</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>11</th>
-      <td>positive</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>positive</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>positive</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>positive</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>positive</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Gram_Staining</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">11</td>
+<td>positive</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">12</td>
+<td>positive</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">13</td>
+<td>positive</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">14</td>
+<td>positive</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">15</td>
+<td>positive</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1158,7 +1138,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="alt.colorgram_stainingn" class="level2">
 <h2 class="anchored" data-anchor-id="alt.colorgram_stainingn">alt.Color(‘Gram_Staining:N’)</h2>
 <p>Let’s encode <code>Gram_Staining</code> on the <code>color</code> channel as a nominal data type:</p>
-<div class="cell" data-execution_count="15">
+<div id="522f53c8" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1175,23 +1155,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="38">
 
 <style>
-  #altair-viz-67833f640b894c0f808181d265a64c25.vega-embed {
+  #altair-viz-c6eb7293b8454568af8b4f79e60ed15e.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-67833f640b894c0f808181d265a64c25.vega-embed details,
-  #altair-viz-67833f640b894c0f808181d265a64c25.vega-embed details summary {
+  #altair-viz-c6eb7293b8454568af8b4f79e60ed15e.vega-embed details,
+  #altair-viz-c6eb7293b8454568af8b4f79e60ed15e.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-67833f640b894c0f808181d265a64c25"></div>
+<div id="altair-viz-c6eb7293b8454568af8b4f79e60ed15e"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-67833f640b894c0f808181d265a64c25") {
-      outputDiv = document.getElementById("altair-viz-67833f640b894c0f808181d265a64c25");
+    if (outputDiv.id !== "altair-viz-c6eb7293b8454568af8b4f79e60ed15e") {
+      outputDiv = document.getElementById("altair-viz-c6eb7293b8454568af8b4f79e60ed15e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1246,7 +1226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="sometimes-helpful-trick-choose-colors-with-external-meaning" class="level2">
 <h2 class="anchored" data-anchor-id="sometimes-helpful-trick-choose-colors-with-external-meaning">Sometimes helpful trick: choose colors with external meaning</h2>
 <p>However, we might wish to customize the colors used. In this case, we might want to use the colors that come out in lab when you do gram staining. Let’s use those colors by specifying an explicit scale mapping from the data <code>domain</code> to the color <code>range</code>:</p>
-<div class="cell" data-execution_count="16">
+<div id="fb8a574e" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1265,23 +1245,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="39">
 
 <style>
-  #altair-viz-354fab7b239646e2926a43ad234c3c8f.vega-embed {
+  #altair-viz-ccc502e3d65b49d3b4cc0ab4fd911f06.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-354fab7b239646e2926a43ad234c3c8f.vega-embed details,
-  #altair-viz-354fab7b239646e2926a43ad234c3c8f.vega-embed details summary {
+  #altair-viz-ccc502e3d65b49d3b4cc0ab4fd911f06.vega-embed details,
+  #altair-viz-ccc502e3d65b49d3b4cc0ab4fd911f06.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-354fab7b239646e2926a43ad234c3c8f"></div>
+<div id="altair-viz-ccc502e3d65b49d3b4cc0ab4fd911f06"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-354fab7b239646e2926a43ad234c3c8f") {
-      outputDiv = document.getElementById("altair-viz-354fab7b239646e2926a43ad234c3c8f");
+    if (outputDiv.id !== "altair-viz-ccc502e3d65b49d3b4cc0ab4fd911f06") {
+      outputDiv = document.getElementById("altair-viz-ccc502e3d65b49d3b4cc0ab4fd911f06");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1334,7 +1314,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="color-by-species-i" class="level2">
 <h2 class="anchored" data-anchor-id="color-by-species-i">Color by Species I</h2>
-<div class="cell" data-execution_count="17">
+<div id="21e2759e" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1351,23 +1331,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="40">
 
 <style>
-  #altair-viz-6250bfb821864d9bae2e1bcd92c2cf5d.vega-embed {
+  #altair-viz-81b6a97dfe9c44d6854f1aebe944cb52.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-6250bfb821864d9bae2e1bcd92c2cf5d.vega-embed details,
-  #altair-viz-6250bfb821864d9bae2e1bcd92c2cf5d.vega-embed details summary {
+  #altair-viz-81b6a97dfe9c44d6854f1aebe944cb52.vega-embed details,
+  #altair-viz-81b6a97dfe9c44d6854f1aebe944cb52.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-6250bfb821864d9bae2e1bcd92c2cf5d"></div>
+<div id="altair-viz-81b6a97dfe9c44d6854f1aebe944cb52"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-6250bfb821864d9bae2e1bcd92c2cf5d") {
-      outputDiv = document.getElementById("altair-viz-6250bfb821864d9bae2e1bcd92c2cf5d");
+    if (outputDiv.id !== "altair-viz-81b6a97dfe9c44d6854f1aebe944cb52") {
+      outputDiv = document.getElementById("altair-viz-81b6a97dfe9c44d6854f1aebe944cb52");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1417,12 +1397,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </script>
 </div>
 </div>
-<p>Discussion question: what’s wrong with this plot? ::: {.notes .content-visible when-profile=“speaker”} <strong>NOTES:</strong> <em>solution colors get reused because there are more than 10 legend items</em> :::</p>
+<p>Discussion question: what’s wrong with this plot?</p>
+<p><strong>NOTES:</strong> <em>solution colors get reused because there are more than 10 legend items</em></p>
 </section>
 <section id="color-by-species-ii" class="level2">
 <h2 class="anchored" data-anchor-id="color-by-species-ii">Color by Species II</h2>
 <p>Use <code>tableau20</code> so we have 20 colors instead of 10</p>
-<div class="cell" data-execution_count="18">
+<div id="29e7314e" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1439,25 +1420,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
 
-
 <style>
-  #altair-viz-506c0f7f7ef14c9b8bcc8f1a54023399.vega-embed {
+  #altair-viz-9d8606deba224817ba7f95a22f256d21.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-506c0f7f7ef14c9b8bcc8f1a54023399.vega-embed details,
-  #altair-viz-506c0f7f7ef14c9b8bcc8f1a54023399.vega-embed details summary {
+  #altair-viz-9d8606deba224817ba7f95a22f256d21.vega-embed details,
+  #altair-viz-9d8606deba224817ba7f95a22f256d21.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-506c0f7f7ef14c9b8bcc8f1a54023399"></div>
+<div id="altair-viz-9d8606deba224817ba7f95a22f256d21"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-506c0f7f7ef14c9b8bcc8f1a54023399") {
-      outputDiv = document.getElementById("altair-viz-506c0f7f7ef14c9b8bcc8f1a54023399");
+    if (outputDiv.id !== "altair-viz-9d8606deba224817ba7f95a22f256d21") {
+      outputDiv = document.getElementById("altair-viz-9d8606deba224817ba7f95a22f256d21");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1511,7 +1491,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="color-by-species-iii-color-as-o" class="level2">
 <h2 class="anchored" data-anchor-id="color-by-species-iii-color-as-o">Color by Species III – color as <code>O</code></h2>
-<div class="cell" data-execution_count="19">
+<div id="d88e6bef" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1528,23 +1508,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="42">
 
 <style>
-  #altair-viz-8ce7746bbbdf4b82a1122c91d80d13a2.vega-embed {
+  #altair-viz-cb9bf298c3934630a8a36e6092a0cb54.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-8ce7746bbbdf4b82a1122c91d80d13a2.vega-embed details,
-  #altair-viz-8ce7746bbbdf4b82a1122c91d80d13a2.vega-embed details summary {
+  #altair-viz-cb9bf298c3934630a8a36e6092a0cb54.vega-embed details,
+  #altair-viz-cb9bf298c3934630a8a36e6092a0cb54.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-8ce7746bbbdf4b82a1122c91d80d13a2"></div>
+<div id="altair-viz-cb9bf298c3934630a8a36e6092a0cb54"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8ce7746bbbdf4b82a1122c91d80d13a2") {
-      outputDiv = document.getElementById("altair-viz-8ce7746bbbdf4b82a1122c91d80d13a2");
+    if (outputDiv.id !== "altair-viz-cb9bf298c3934630a8a36e6092a0cb54") {
+      outputDiv = document.getElementById("altair-viz-cb9bf298c3934630a8a36e6092a0cb54");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1604,7 +1584,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="color-by-species-iv-use-viridis" class="level2">
 <h2 class="anchored" data-anchor-id="color-by-species-iv-use-viridis">Color by Species IV – use <code>viridis</code></h2>
 <p>This scheme increases both hue and luminance</p>
-<div class="cell" data-execution_count="20">
+<div id="1522e9b2" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Neomycin:Q'</span>,</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1622,23 +1602,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="43">
 
 <style>
-  #altair-viz-809e68680cc2438dba7e829172dbabbb.vega-embed {
+  #altair-viz-01699ff9e8fe497c8a3c3bf3981e8fee.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-809e68680cc2438dba7e829172dbabbb.vega-embed details,
-  #altair-viz-809e68680cc2438dba7e829172dbabbb.vega-embed details summary {
+  #altair-viz-01699ff9e8fe497c8a3c3bf3981e8fee.vega-embed details,
+  #altair-viz-01699ff9e8fe497c8a3c3bf3981e8fee.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-809e68680cc2438dba7e829172dbabbb"></div>
+<div id="altair-viz-01699ff9e8fe497c8a3c3bf3981e8fee"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-809e68680cc2438dba7e829172dbabbb") {
-      outputDiv = document.getElementById("altair-viz-809e68680cc2438dba7e829172dbabbb");
+    if (outputDiv.id !== "altair-viz-01699ff9e8fe497c8a3c3bf3981e8fee") {
+      outputDiv = document.getElementById("altair-viz-01699ff9e8fe497c8a3c3bf3981e8fee");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1697,7 +1677,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>bacteria family is at the beginning of the name of each strain.</li>
 </ul>
 <p>Suppose instead that the family was instead at the <em>end</em> of the name</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>bacteria name</th>
@@ -1713,14 +1693,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>Let’s troubleshoot in real-time. How would you get the color scheme to align with family? There’s more than one good way to do this.</p>
-<div class="notes">
 <p><strong>NOTES:</strong> <em>solution 1) (less clever) manually assign colors to each strain by hand 2) (more clever) use string cleaning to move the family name to the front. 3) (not sure exactly how to do this in Python, but this is how I’d do it in Stata) assign each bacteria to a number, making sure bacteria in the same family are close to each other. Then just use the name as a label for the legend</em></p>
-</div>
 </section>
 <section id="text-labels-by-species" class="level2">
 <h2 class="anchored" data-anchor-id="text-labels-by-species">Text Labels by Species</h2>
 <p>A more clear way to handle this is to use <code>mark_text()</code> to explicitly label each dot. However, that comes at the cost of adding a lot of chart clutter.</p>
-<div class="cell" data-execution_count="21">
+<div id="1532c4f0" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).encode(</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    alt.X(<span class="st">'Penicillin:Q'</span>,</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>          sort<span class="op">=</span><span class="st">'descending'</span>,</span>
@@ -1751,23 +1729,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="44">
 
 <style>
-  #altair-viz-cca4afacaa4248ae90da6b3cbe4edfb9.vega-embed {
+  #altair-viz-ed60495bbb0e4c6da48df80a2e33992e.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-cca4afacaa4248ae90da6b3cbe4edfb9.vega-embed details,
-  #altair-viz-cca4afacaa4248ae90da6b3cbe4edfb9.vega-embed details summary {
+  #altair-viz-ed60495bbb0e4c6da48df80a2e33992e.vega-embed details,
+  #altair-viz-ed60495bbb0e4c6da48df80a2e33992e.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-cca4afacaa4248ae90da6b3cbe4edfb9"></div>
+<div id="altair-viz-ed60495bbb0e4c6da48df80a2e33992e"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-cca4afacaa4248ae90da6b3cbe4edfb9") {
-      outputDiv = document.getElementById("altair-viz-cca4afacaa4248ae90da6b3cbe4edfb9");
+    if (outputDiv.id !== "altair-viz-ed60495bbb0e4c6da48df80a2e33992e") {
+      outputDiv = document.getElementById("altair-viz-ed60495bbb0e4c6da48df80a2e33992e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1818,14 +1796,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>Discussion question – What is another way we have seen to make it possible for the reader to see what each dot is labeled, but using less clutter?</p>
-<div class="notes">
 <p><strong>NOTES:</strong> <em>solution tool tip</em></p>
-</div>
 </section>
 <section id="color-by-genus-i" class="level2">
 <h2 class="anchored" data-anchor-id="color-by-genus-i">Color by Genus I</h2>
 <p>Need to use <code>transform_calculate()</code> to extract <code>Genus</code></p>
-<div class="cell" data-execution_count="22">
+<div id="cab311cc" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).transform_calculate(</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    Genus<span class="op">=</span><span class="st">'split(datum.Bacteria, " ")[0]'</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>).encode(</span>
@@ -1844,25 +1820,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>).properties(width<span class="op">=</span><span class="dv">250</span>, height<span class="op">=</span><span class="dv">250</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="45">
 
-
 <style>
-  #altair-viz-83712c1d3b6a4600b87891adde1be547.vega-embed {
+  #altair-viz-8fde7f2001ea4fc09c55ba837463bbae.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-83712c1d3b6a4600b87891adde1be547.vega-embed details,
-  #altair-viz-83712c1d3b6a4600b87891adde1be547.vega-embed details summary {
+  #altair-viz-8fde7f2001ea4fc09c55ba837463bbae.vega-embed details,
+  #altair-viz-8fde7f2001ea4fc09c55ba837463bbae.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-83712c1d3b6a4600b87891adde1be547"></div>
+<div id="altair-viz-8fde7f2001ea4fc09c55ba837463bbae"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-83712c1d3b6a4600b87891adde1be547") {
-      outputDiv = document.getElementById("altair-viz-83712c1d3b6a4600b87891adde1be547");
+    if (outputDiv.id !== "altair-viz-8fde7f2001ea4fc09c55ba837463bbae") {
+      outputDiv = document.getElementById("altair-viz-8fde7f2001ea4fc09c55ba837463bbae");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1916,7 +1891,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="color-by-genus-ii" class="level2">
 <h2 class="anchored" data-anchor-id="color-by-genus-ii">Color by Genus II</h2>
 <p>Recode infrequent <code>Genus</code> values to “Other”.</p>
-<div class="cell" data-execution_count="23">
+<div id="77ec02cb" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_circle(size<span class="op">=</span><span class="dv">80</span>).transform_calculate(</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  Split<span class="op">=</span><span class="st">'split(datum.Bacteria, " ")[0]'</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>).transform_calculate(</span>
@@ -1941,23 +1916,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="46">
 
 <style>
-  #altair-viz-1841f20456c44cee90dfc562f3a3c9f5.vega-embed {
+  #altair-viz-a2b37fb24de74494bcc6bf06d061ce5a.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-1841f20456c44cee90dfc562f3a3c9f5.vega-embed details,
-  #altair-viz-1841f20456c44cee90dfc562f3a3c9f5.vega-embed details summary {
+  #altair-viz-a2b37fb24de74494bcc6bf06d061ce5a.vega-embed details,
+  #altair-viz-a2b37fb24de74494bcc6bf06d061ce5a.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-1841f20456c44cee90dfc562f3a3c9f5"></div>
+<div id="altair-viz-a2b37fb24de74494bcc6bf06d061ce5a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1841f20456c44cee90dfc562f3a3c9f5") {
-      outputDiv = document.getElementById("altair-viz-1841f20456c44cee90dfc562f3a3c9f5");
+    if (outputDiv.id !== "altair-viz-a2b37fb24de74494bcc6bf06d061ce5a") {
+      outputDiv = document.getElementById("altair-viz-a2b37fb24de74494bcc6bf06d061ce5a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -2011,7 +1986,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="color-by-antibiotic-response-i" class="level2">
 <h2 class="anchored" data-anchor-id="color-by-antibiotic-response-i">Color by Antibiotic Response I</h2>
-<div class="cell" data-execution_count="24">
+<div id="231b6b29" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics).mark_rect().encode(</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Bacteria:N'</span>,</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>      sort<span class="op">=</span>alt.EncodingSortField(field<span class="op">=</span><span class="st">'Penicillin'</span>, op<span class="op">=</span><span class="st">'max'</span>, order<span class="op">=</span><span class="st">'descending'</span>)</span>
@@ -2021,23 +1996,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="47">
 
 <style>
-  #altair-viz-0929b69588b04fa29b9e96ac9553e68b.vega-embed {
+  #altair-viz-54d9fe07847349f689542d385427c95c.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-0929b69588b04fa29b9e96ac9553e68b.vega-embed details,
-  #altair-viz-0929b69588b04fa29b9e96ac9553e68b.vega-embed details summary {
+  #altair-viz-54d9fe07847349f689542d385427c95c.vega-embed details,
+  #altair-viz-54d9fe07847349f689542d385427c95c.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-0929b69588b04fa29b9e96ac9553e68b"></div>
+<div id="altair-viz-54d9fe07847349f689542d385427c95c"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0929b69588b04fa29b9e96ac9553e68b") {
-      outputDiv = document.getElementById("altair-viz-0929b69588b04fa29b9e96ac9553e68b");
+    if (outputDiv.id !== "altair-viz-54d9fe07847349f689542d385427c95c") {
+      outputDiv = document.getElementById("altair-viz-54d9fe07847349f689542d385427c95c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -2096,7 +2071,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>format <code>alt.Y(... alt.Axis())</code></li>
 <li>format <code>alt.Color</code> with <code>plasma</code> color scheme, legend edits</li>
 </ul>
-<div class="cell" data-execution_count="25">
+<div id="08ef26dc" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(antibiotics, title<span class="op">=</span><span class="st">'Penicillin Resistance of Bacterial Strains'</span>).mark_rect().encode(</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    alt.Y(<span class="st">'Bacteria:N'</span>,</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>      sort<span class="op">=</span>alt.EncodingSortField(field<span class="op">=</span><span class="st">'Penicillin'</span>, op<span class="op">=</span><span class="st">'max'</span>, order<span class="op">=</span><span class="st">'descending'</span>),</span>
@@ -2120,23 +2095,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="48">
 
 <style>
-  #altair-viz-96dc22de8ea34f15a62d4dfe93b388a8.vega-embed {
+  #altair-viz-c05ab43afe94465a88b0b533f490c93d.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-96dc22de8ea34f15a62d4dfe93b388a8.vega-embed details,
-  #altair-viz-96dc22de8ea34f15a62d4dfe93b388a8.vega-embed details summary {
+  #altair-viz-c05ab43afe94465a88b0b533f490c93d.vega-embed details,
+  #altair-viz-c05ab43afe94465a88b0b533f490c93d.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-96dc22de8ea34f15a62d4dfe93b388a8"></div>
+<div id="altair-viz-c05ab43afe94465a88b0b533f490c93d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-96dc22de8ea34f15a62d4dfe93b388a8") {
-      outputDiv = document.getElementById("altair-viz-96dc22de8ea34f15a62d4dfe93b388a8");
+    if (outputDiv.id !== "altair-viz-c05ab43afe94465a88b0b533f490c93d") {
+      outputDiv = document.getElementById("altair-viz-c05ab43afe94465a88b0b533f490c93d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -2237,12 +2212,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
     }
-  });
-  clipboard.on('success', function(e) {
+    return false;
+  }
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2274,11 +2252,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2288,8 +2305,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2301,9 +2327,245 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -2344,6 +2606,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

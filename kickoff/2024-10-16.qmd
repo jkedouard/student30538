@@ -13,17 +13,27 @@ format:
             \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
             \DefineVerbatimEnvironment{OutputCode}{Verbatim}{breaklines,commandchars=\\\{\}}
 ---
+
+## Ahead of today's lecture
+* If you haven't already: `pip install palmerpenguins` 
+
 ## New student repo
 * New student repo:  [https://github.com/uchicago-harris-dap/student30538  (link)](https://github.com/uchicago-harris-dap/student30538)
-* You will have to clone it again
-* Simpler structure: just one branch, with separate folders for before and after lecture 
+* You will have to fork it again (see instructions in README.md)
+* Simpler structure: just one branch, with separate folders for `before_lecture` and `after_lecture`
+
+## Tip from Ed
+* Jakub found a cool extension for viewing and cleaning data in VSCode (similar to RStudio)
+* [https://code.visualstudio.com/docs/datascience/data-wrangler (link)](https://code.visualstudio.com/docs/datascience/data-wrangler)
+
+![](pictures/datawrangler.png)
 
 ## MUD concerns about workload
 * We removed a section from PS2. Revised version is in student repo.
 * We are adding office hours this week
     * Akbar over zoom on Friday
     * Joaquin in person Thursday
-    * Please post in office hours questions thread on Ed before you come.
+    * *You will get priority if you post your question to the office hours thread on Ed before you come*
 * Looking forward, PS3 is shorter than PS1 or PS2 as best as we can tell
 
 ## MUD other
