@@ -14,6 +14,27 @@ format:
             \DefineVerbatimEnvironment{OutputCode}{Verbatim}{breaklines,commandchars=\\\{\}}
 ---
 
+## Attendance
+* We are switching over to taking attendance via Canvas seating chart tool - no sign-in sheet!
+* Make it harder for me to miss you: 
+\vspace{2ex}
+    * Come on time
+    * Stay in approx. the same seat
+    * Use your name tent
+    * Submit a MUD card
+
+## Problem Sets
+* Two problem sets released today
+* PS3: Git -- due 10/26
+\vspace{2ex}
+    * Half solo, half paired
+    * Should be shorter than PS1 and PS2
+* PS4: Spatial -- due **11/2**
+\vspace{2ex}
+    * Paired, but longer
+    * First 2 out of 5 sections is just data cleaning -- highly recommend you get started this week
+* _Heads up: M sections reporting issues with Github Classroom for the PS3 paired section (last 10 points). We are troubleshooting and will have solution by EOD_
+
 ## MUD
 * *When to winsorize?* When you have an observation which has reasonable values for almost all variables, but is an extreme outlier for just one variable.
 \vspace{2ex}
@@ -23,26 +44,9 @@ format:
     *  Summary statistics: you want to report the same number of observations across all your descriptive statistics
     \vspace{2ex}
         * If you set that cell to NA, your summary statistic for that variable will have fewer observations than for the other variables.
-    * Often used for variables that extreme extreme skewness: healthcare costs 
+    * Often used for variables that extreme extreme skewness: income, stock returns, real estate prices, healthcare costs 
     
-    
-## Curriculum
-* Finishing up visualization in the first half of today
-* Remaining 1.5 lectures this week are on version control
+## Tech Tip
+* Something that came up in troubleshoot for one of the TAs: knitting errors could look different when knitting to PDF. 
+* To keep these errors, add `keep-tex: true`  in the QMD YAML to help debug these errors
 
-## Problem Sets
-* Two problem sets released later today, will send a Canvas announcement when they are live.
-* PS3: Git -- due 10/26
-\vspace{2ex}
-    * Half solo, half paired
-    * Should be shorter than PS1 and PS2
-* PS4: Spatial -- due **11/2**
-\vspace{2ex}
-    * Paired, but longer
-    * First 2 out of 5 sections is just data cleaning -- highly recommend you get started this week
-
-## Final Project meetings
-
-Send questions in advance in Ed via tag "Final project ganong"
-
-First come first serve sign up **[here](https://docs.google.com/spreadsheets/d/1C696XfJpfB7Wz0ncMOjq2l10PUnBSZ5jBfZWawF36tg/edit?gid=0#gid=0)**. Meet in room 0049.

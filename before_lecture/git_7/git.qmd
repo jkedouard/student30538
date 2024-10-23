@@ -12,22 +12,27 @@ format:
 ---
 
 
-
 # Conceptual 
 
 ## Roadmap
 * What is version control?
-* Why do I need git?
+* What is Git and why do I need it?
 * How (not) to learn git 
+* Git vs. Github vs. Github Desktop
+
+<!--
+## What is version control?
+![](img/comic.png){fig-align="center" height=100%}
+-->
 
 ## What is version control?
-
 * Version control: a system that records changes to a file or set of files over time so that you can recall specific versions later
 * Examples of version control
     * Informal: date multiple versions of a document
     * Tools like dropbox and google docs do this automatically
     * Another neat tool similar to google docs is Google Colab
 * There is now even **[VSCode for the web](https://code.visualstudio.com/docs/editor/vscode-web)**... and it uses git for version control :-)
+* Cloud tools not a good version control solution for code because _code needs to run_
 
 ## What is centralized version control?
 
@@ -42,8 +47,22 @@ format:
 ![](img/distributed_vc.png){fig-align="center" height=70%}
 
 
-## How to learn git
+## Why Git?
+* We will cover Git for the second half of today and next lecture. You might ask: what's in it for me?
+* In general: 
+    * Part of the standard toolbox for analysts, but as you will see, it is not an easy skill to pick up on the job
+    * Useful for solo projects for version control (as opposed to: `final_report_revised_v5_maggieedits.qmd`)
+    * Crucial in group projects to make sure you don't write over others' work or break something.
 
+
+## Why Git?
+* In this class:
+    * Use command line git to submit PS3, 4, 5, 6 and final project
+    * Collaboration in PS3, 4, and final project -- can work parallel as opposed to sequentially, and work without fear of writing over others' work
+    * Resolve merge conflicts related to changes in the student repo
+
+
+## How to learn git
 Install git following the guide **[here](https://github.com/git-guides/install-git)**
 
 1. Accept that this is tricky and you will make mistakes
@@ -53,6 +72,13 @@ Install git following the guide **[here](https://github.com/git-guides/install-g
     * do-pair-share in class
     * video game on pset
     * exercises on pset
+
+## How not to learn git
+
+* Command line git is what will be assessed on the quiz, the pset, and the final. 
+    * Worst for learning: You might previously have used Github desktop or dragged and dropped files into github.com. These tools are easy to use, but the whole process is like magic and you never really understand what's happening.
+    * Also bad: Visual Studio Code's git panel is better than Github desktop and might ultimately speed you up, but don't use it right now. If you start using that then you won't understand as well what is happening under the hood.
+
 
 
 ## Textbook
@@ -68,38 +94,45 @@ Install git following the guide **[here](https://github.com/git-guides/install-g
 
 note: this is a 500 page textbook! Barely scratching the surface. Pset material goes beyond lecture, but still only scratches the surface.
 
-* Cheatsheet **[here](https://training.github.com/downloads/github-git-cheat-sheet/)**
+* Cheatsheet **[here (link)](https://training.github.com/downloads/github-git-cheat-sheet/)**
 
-## How not to learn git
 
-* Command line git is what will be assessed on the quiz, the pset, and the final. 
-    * Worst for learning: You might previously have used Github desktop or dragged and dropped files into github.com. These tools are easy to use, but the whole process is like magic and you never really understand what's happening.
-    * Also bad: Visual Studio Code's git panel is better than Github desktop and might ultimately speed you up, but don't use it right now. If you start using that then you won't understand as well what is happening under the hood.
+## Git vs. Github vs. Github Desktop 
+* Git: software used for version control locally (i.e., on your computer)
+    * The "object" is a git repository
+    * Was installed automatically when you downloaded Github Desktop 
+* Github: hosting service for git repositories -- i.e., a place to store them online
+    * There is one version of your repo online and another that is local, and you manually choose when the sync them ("push" and "pull")
+* Github Desktop: software to interact with Github
+    * Introduced in 2017: "industry veterans" will not know what this is
+    * Under the hood, it is doing command line git
 
 ## Summary
 * Git is a distributed version control system 
 * The only way we know to really understand it is via the command line
 
+
 # Track One Version on Local (Chapter 2.2)
 
 ## Roadmap
-* Git Project Sections
 * Git workflow
 * File lifecycle
 * Basic Commands
 
 
-## Git Project Sections
+<!-- ## Git Project Sections
 
 1. Modified: you have changed a file, but not yet committed it to your database
 2. Staged: you have marked a modified file go to go in your next commit
 3. Committed: the file is stored in your local database
 
-![](img/three_sections.png){fig-align="center" height=50%}
+![](img/three_sections.png){fig-align="center" height=50%} -->
 
-Remark: every git repo has a hidden `.git` folder containing the database
+
 
 ## Git workflow
+
+Every git repo has a hidden `.git` folder containing the database
 
 Git does not track every file that is in the directory containing `.git`. Instead, you decide which files to track.
 
@@ -107,11 +140,13 @@ Git does not track every file that is in the directory containing `.git`. Instea
 2. Selectively add files you want to commit to your staging area
 3. Commit: permanently tracks the staged files as part of the version control system 
 
+Analogy: in the standard workflow, steps 2 and 3 happen automatically after you save. In Git, you choose when this happens to ensure you don't "save" something that breaks the code. 
+
 ## File lifecycle
 
-![](img/file_lifecycle.png){fig-align="center"}
+![](img/file_lifecycle.png){fig-align="center" width=80%}
 
-(Yes, it is a data visualization sin that they used the same colors from two slides ago to convey different concepts... very annoying)
+<!-- (Yes, it is a data visualization sin that they used the same colors from two slides ago to convey different concepts... very annoying) -->
 
 ## Basic Commands
 
@@ -120,7 +155,7 @@ Git does not track every file that is in the directory containing `.git`. Instea
 $ git status
 ```
 
-* check status of working directory
+* check status of working directory: what's staged for commit, what's tracked but not staged, and what's not tracked (but modified)
 
 ## Basic Commands
 
@@ -151,18 +186,17 @@ $ git add .
 $ git commit -m "<message>"
 ```
 
-* Commit files from staging area 
+* Commit files from staging area with a message. 
+* The message should be informative about what's in the commit: "debugged function to do XYZ"
 
 ## Basic Commands
 
 ![](img/file_lifecycle.png){fig-align="center" width=80%}
 
 ```{}
-$ git commit -a -m "<message>"
+$ git log
 ```
-
-* Stage the already tracked files and then commit in one step
-
+* prints log of recent commits
 
 ## Create a new repo
 
@@ -181,16 +215,17 @@ Choices
 * You will often have files or filetypes that you want Git to systematically avoid (*ignore*). Examples:
   * Automatically-generated files from compiling Python (`.pyc`)
   * Large data files (this will become very important on PS4)
+  * Mac users: `.DS_Store`!
 * Create a file called `.gitignore` to tell git which files to ignore
 * You must commit your `.gitignore` to the repo 
 
 ## Git Ignore II
-Example .gitignore :
+Example `.gitignore` :
 
 ![](img/git_ignore.png){fig-align="center" width=80%}
 
-* See more examples **[here](https://github.com/github/gitignore)**
-* Github's **[recommendation](https://github.com/github/gitignore/blob/main/Python.gitignore)** for Python. We haven't tested it yet.
+* See more examples **[here (link)](https://github.com/github/gitignore)**
+* Github's **[recommendation (link)](https://github.com/github/gitignore/blob/main/Python.gitignore)** for Python. We haven't tested it yet.
 
 ## Summary
 * Adding files to the staging area prepares Git to track changes
@@ -329,7 +364,7 @@ We will use the repo **[merge_example](https://github.com/uchicago-harris-dap/me
 | C0   | `main`   | Create `add.py`, which adds x to 3       | none      | no        |
 | C1   | `hotfix` | Change `add.py` to add x and y           | C0        | no        |
 | C2   | `iss53`  | Change `add.py` to add a list  | C1        | no        |
-| C3   | `main`   | Change `add.py` to add x to 4            | C2        | no        |
+| C3   | `main`   | Change `add.py` to add x to 4            | C0         | no        |
 | C4   | `main`   | Merge `hotfix` into `main`               | C1 \& C3 | yes!      |
 
 \normalsize
@@ -442,8 +477,6 @@ Incoming change because it is more general
 
 
 
-::: {.notes .content-visible unless-profile="before_lecture"}
-
 ## Three way merge with a conflict VI
 
 How `add.py` looks after conflict is resolved
@@ -488,11 +521,10 @@ preserved in case we want to revive it
 
 Goal: the file *add.py* should look identical on `main` and `iss53`
 
-1. `git fork https://github.com/uchicago-harris-dap/merge_example` 
+1. On github.com, fork `https://github.com/uchicago-harris-dap/merge_example` 
 2. Clone your fork to local
 3. Merge `iss53` into `main`, naming your commit `C5`
 4. Using VSCode, resolve the conflict in favor of the `iss53` version
-
 
 
 ## Resolving file-level conflicts I
