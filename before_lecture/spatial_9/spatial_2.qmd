@@ -19,8 +19,21 @@ include-before-body:
       breaklines
     }
     
+--- 
+<!--
 ---
-
+title: "Spatial II"
+author: "Peter Ganong and Maggie Shi"
+date: today
+date-format: long
+toc: false
+execute: 
+    echo: true
+format:
+    html:
+        toc: false 
+---
+-->
 # Introduction to data structures in geopandas (6.2)
 
 ## Geopandas roadmap
@@ -54,13 +67,6 @@ Vocabulary
 -   Usually also have `.prj` which describes the Coordinate Reference System (CRS)
 -   When you read in `map.shp` it automatically reads the rest of them as well to give you proper GeoDataFrame composed of geometry, attributes and projection.
 
-## File format II: GeoPackage
-
--   single file `.gpkg`
--   Supports both raster and vector data
--   Efficiently decodable by software, particularly in mobile devices
-
-GeoPackage is more modern, but you will encounter shapefiles everywhere you look so good to be familiar with it.
 
 ## Coordinate Reference Systems
 - Coordinate Reference System (CRS) is a combination of:
@@ -76,6 +82,10 @@ GeoPackage is more modern, but you will encounter shapefiles everywhere you look
     - (Aside: EPSG stands for European Petroleum Survey Group)
     - These codes are used to convert one CRS into another
 
+<!-- ZZZZ here I would go to the epsg link and search up WGS84 to show that it is EPSG number 4326. https://epsg.io/4326. 
+Then you can look up "Illinois" and show that there are Illinois-east and Illinois-west-specific CRS's. 
+The skill they should learn is what a CRS is and how to look up the EPSG numbers so that they can transform from one CRS to another: https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.to_crs.html  -->
+
 
 ## Reading a Shapefile `.shp`
 
@@ -85,6 +95,15 @@ filepath = "data/shp/austin_pop_2019.shp"
 data = gpd.read_file(filepath)
 ```
 
+
+## File format II: GeoPackage
+
+-   single file `.gpkg`
+-   Supports both raster and vector data
+-   Efficiently decodable by software, particularly in mobile devices
+
+GeoPackage is more modern, but you will encounter shapefiles everywhere you look so good to be familiar with it.
+
 ## Reading a GeoPackage `gpkg`
 
 ```{python}
@@ -92,6 +111,9 @@ filepath = "data/austin_pop_2019.gpkg"
 data = gpd.read_file(filepath)
 type(data)
 ```
+
+
+
 
 ## Previewing a `GeoDataFrame`
 
@@ -111,6 +133,8 @@ data.plot()
 Discussion question: Why isn't it enough to just to `head()`?
 
 
+<!-- ZZZ solution: because WKT isn't intellgible to you for sanity checking. But seeing an actual map is. Also, note that the WKT are not comparable to the WKT we saw in examples earlier because they're on different coordinate reference systems? -->
+
 ## Geopandas summary
 
 -   `GeoDataFrame` and `GeoSeries` are the counterparts of `pandas.DataFrame` and `pandas.Series`
@@ -124,6 +148,7 @@ Discussion question: Why isn't it enough to just to `head()`?
 -   methods applied to `GeoSeries`
 -   my first choropleth
 
+<!-- MS to GGG: fixed small typo throughout - it's "choropleth," not "chloropleth." Before I taught spatial I also could have sworn it was called chloropleth too! -->
 
 ## `GeoSeries`
 
@@ -131,6 +156,7 @@ Discussion question: Why isn't it enough to just to `head()`?
 type(data["geometry"])
 ```
 
+<!--PG note to self: textbook uses inconsistent syntax for extracting geometry in different places. I have made it consistent to improve clarity-->
 
 ## `head()`
 
@@ -151,7 +177,7 @@ data["geometry"].area
 data["area_km2"] = data.area / 1000000
 data.head()
 ```
-
+<!-- MS to GGG: how do we know that the area is in meters? -->
 ## my first choropleth
 
 ```{python}
@@ -159,6 +185,7 @@ data.plot(column="area_km2", legend=True)
 ```
 
 Why is this a nearly useless set of colors?
+<!--Usually we do choropleths based on attributes. Will do this in the next section of lecture.-->
 
 ## geometries: summary
 
@@ -222,6 +249,7 @@ plt.show()
 ## methods: centroid I
 
 What it is: arithmetic mean position of all the points in a polygon
+<!-- MS to GGG: this used to read "arithmetic mean position of all the points in the surface of the figure", but I think "polygons" is more accurate? -->
 
 Sample use case: measuring distance between center of each multipolygon
 
@@ -272,12 +300,26 @@ poly = Polygon([point1, point2, point3, point4])
 ```
 - *Note*: the order in which you put these points together matters, and you'll get all sorts of interesting shapes with different orders!
 
+<!-- PG to MS:
+1. data.union_all().envelope should also work, but it is throwing an error for me, I'm curious if it works for you
+2. One fun thing I learned by accident is that if you put the points in a different order that you get all sorts of interesting shapes. Not sure we really care about this, but could be a fun short in-class exercise
+
+MS to GGG: I'm getting "AttributeError: 'GeoDataFrame' object has no attribute 'union_all'"
+Very odd since there's documentation for it... https://geopandas.org/en/latest/docs/reference/api/geopandas.GeoSeries.union_all.html
+
+I added a line on that second point!
+-->
 
 ## methods: buffer I
 
 What it is: shape representing all points that are less than a certain distance from the original shape
 
 Sample use case: how many stores or parks near a neighborhood
+
+<!-- CC additional suggestion for motivations which I did not include for space reasons
+* geometries that don’t line up. Coasts are a moving target. Some geometries will go out into the water. Others will have a well-defined coast. 
+* Also for selecting for the spatial relationships
+-->
 
 ## methods: buffer II
 
@@ -302,6 +344,7 @@ data.loc[data["pop_density_km2"] > data["pop_density_km2"].mean(), "dense"] = 1
 data.dense.value_counts()
 ```
 
+<!-- MS to GGG: this would be a great discussion question (if the comment was removed): what is that line of code doing? Why would this relate to the sample use described above? Answer: say the city can only serve half of the areas with public transit and wants to create a map with just those areas combined.-->
 
 ## methods: dissolve II
 ```{python}
@@ -316,6 +359,12 @@ dissolved
 - Aggregating alters the way the data is indexed and makes the grouping variable the index
 - We need to reset it in order to plot, since some plotting libraries expect data to be indexed in a specific way
 
+<!--
+PG to MS not sure if we need more detail here. If you want more detail see the conversation here, but that feels like TMI
+https://chatgpt.com/share/66eb10ee-3a10-800a-bee6-89851e220d69
+
+MS to GGG: I was a little confused, so I added in the bullets above. 
+-->
 
 ## methods: dissolve III
 ```{python}
@@ -325,6 +374,9 @@ plt.show()
 ```
 
 Discussion Question: is this a good map? What can we do to improve it?
+
+<!-- ZZZ: no -- the reader has no idea what purple and yellow mean. It would be better if we added a legend that indicates that purple areas are above-median in population density while yellow is below-median. -->
+
 
 ## methods: spatial join
 
