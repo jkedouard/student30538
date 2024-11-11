@@ -113,7 +113,7 @@ from bs4 import BeautifulSoup
 url = "https://en.wikipedia.org/wiki/United_States"
 response = requests.get(url)
 
-soup = BeautifulSoup(response.content, 'lxml')
+soup = BeautifulSoup(response.content, 'html.parser')
 
 ```
 
@@ -193,7 +193,7 @@ print(url)
 #| eval: true
 # repeating the previous step, but with the new URL
 response = requests.get(url)
-soup = BeautifulSoup(response.content, 'lxml')
+soup = BeautifulSoup(response.content, 'html.parser')
 ```
 
 ## Step 4: Follow the first link and repeat
@@ -396,7 +396,7 @@ Recall that the steps of building a webscraper are:
 #| echo : true
 url = 'https://maktaba.tetea.org/exam-results/FTNA2015/S0101.htm'
 response = requests.get(url)
-soup = BeautifulSoup(response.text, 'lxml')
+soup = BeautifulSoup(response.text, 'html.parser')
 
 ```
 
