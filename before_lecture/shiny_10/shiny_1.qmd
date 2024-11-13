@@ -578,8 +578,10 @@ $ pip install shinywidgets
 - **UI-side**: `shinywidgets` has its own UI output element: `output_widget()`
 - First, import required packages
 ```{python}
+from shiny import App, render, ui
 from shinywidgets import render_altair, output_widget
 import altair as alt
+import numpy as np
 ```
 
 
